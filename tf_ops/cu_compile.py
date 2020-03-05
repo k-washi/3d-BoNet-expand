@@ -40,13 +40,14 @@ def confirm_dir(path):
 
 def confirm_file(path):
     if os.path.isfile(path):
+        logger.debug("OK: {}".format(path))
         return
     raise Exception("{} がありません".format(path))
 
 confirm_dir(GROUPING_PATH)
 confirm_dir(INTERPOLATION_PATH)
 confirm_dir(SAMPLING_PATH)
-confirm_file(config.CUDA_PATH)
+#confirm_file(config.CUDA_PATH)
 
 
 def nvcc_grouping():
