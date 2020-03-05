@@ -28,7 +28,7 @@ GROUPING_PATH = BASE_DIR + '/tf_ops/grouping'
 INTERPOLATION_PATH = BASE_DIR + '/tf_ops/interpolation'
 SAMPLING_PATH = BASE_DIR + '/tf_ops/sampling'
 
-NVCC_CMD = "!" + os.path.join(config.CUDA_PATH, 'bin', 'nvcc')
+NVCC_CMD = os.path.join(config.CUDA_PATH, 'bin', 'nvcc')
 CUDA_CFLAG = '-I ' + os.path.join(config.CUDA_PATH, 'include')
 CUDA_LFLAG = '-lcudart -L ' + os.path.join(config.CUDA_PATH, 'lib64') + '/'
 
@@ -42,7 +42,7 @@ def confirm_dir(path):
 confirm_dir(GROUPING_PATH)
 confirm_dir(INTERPOLATION_PATH)
 confirm_dir(SAMPLING_PATH)
-#confirm_dir(NVCC_CMD)
+confirm_dir(NVCC_CMD)
 
 
 def nvcc_grouping():
@@ -75,48 +75,53 @@ def cpp_grouping():
            + TF_CFLAGS + ' ' + CUDA_CFLAG + ' ' + TF_LFLAGS + ' ' + CUDA_LFLAG + ' -O2'
 
 
-def nvcc_proc_call():
+def nvcc_proc_call(gcolab = False):
     gr = nvcc_grouping()
     print("!" + gr)
-    try:
-        res = subprocess.check_call(gr)
-        logger.debug(res)
-    except Exception as e:
-        logger.error(e)
+    if gcolab is False:
+        try:
+            res = subprocess.check_call(gr)
+            logger.debug(res)
+        except Exception as e:
+            logger.error(e)
 
     sm = nvcc_sampling()
     print("!" + sm)
-    try:
-        res = subprocess.check_call(sm)
-        logger.debug(res)
-    except Exception as e:
-        logger.error(e)
+    if gcolab is False:
+        try:
+            res = subprocess.check_call(sm)
+            logger.debug(res)
+        except Exception as e:
+            logger.error(e)
 
 
-def cpp_proc_call():
+def cpp_proc_call(gcolab = False):
     gr = cpp_grouping()
     print("!" + gr)
-    try:
-        res = subprocess.check_call(gr)
-        logger.debug(res)
-    except Exception as e:
-        logger.error(e)
+    if gcolab is False:
+        try:
+            res = subprocess.check_call(gr)
+            logger.debug(res)
+        except Exception as e:
+            logger.error(e)
 
     sm = cpp_sampling()
     print("!" + sm)
-    try:
-        res = subprocess.check_call(sm)
-        logger.debug(res)
-    except Exception as e:
-        logger.error(e)
+    if gcolab is False:
+        try:
+            res = subprocess.check_call(sm)
+            logger.debug(res)
+        except Exception as e:
+            logger.error(e)
 
     inter = cpp_interpolation()
     print("!" + inter)
-    try:
-        res = subprocess.check_call(inter)
-        logger.debug(res)
-    except Exception as e:
-        logger.error(e)
+    if gcolab is False:
+        try:
+            res = subprocess.check_call(inter)
+            logger.debug(res)
+        except Exception as e:
+            logger.error(e)
 
 if __name__ == "__main__":
     nvcc_proc_call()
