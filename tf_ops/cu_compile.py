@@ -28,9 +28,9 @@ GROUPING_PATH = BASE_DIR + '/tf_ops/grouping'
 INTERPOLATION_PATH = BASE_DIR + '/tf_ops/interpolation'
 SAMPLING_PATH = BASE_DIR + '/tf_ops/sampling'
 
-NVCC_CMD = os.path.join(config.CUDA_PATH, 'bin', 'nvcc')
+NVCC_CMD = "!" + os.path.join(config.CUDA_PATH, 'bin', 'nvcc')
 CUDA_CFLAG = '-I ' + os.path.join(config.CUDA_PATH, 'include')
-CUDA_LFLAG = '-lcudart -L '+ os.path.join(config.CUDA_PATH, 'lib64') + '/'
+CUDA_LFLAG = '-lcudart -L ' + os.path.join(config.CUDA_PATH, 'lib64') + '/'
 
 
 def confirm_dir(path):
@@ -61,12 +61,12 @@ def cpp_sampling():
     return 'g++ -std=c++11 ' + os.path.join(SAMPLING_PATH, 'tf_sampling.cpp') \
            + ' ' + os.path.join(SAMPLING_PATH, 'tf_sampling_g.cu.o') + ' -o ' \
            + os.path.join(SAMPLING_PATH, 'tf_sampling_so.so') + ' -shared -fPIC ' \
-           + TF_CFLAGS + ' ' + CUDA_CFLAG + ' ' + TF_LFLAGS + ' ' + CUDA_LFLAG + '-O2'
+           + TF_CFLAGS + ' ' + CUDA_CFLAG + ' ' + TF_LFLAGS + ' ' + CUDA_LFLAG + ' -O2'
 
 def cpp_interpolation():
-    return 'g++ -std=c++11 ' + os.path.join(SAMPLING_PATH, 'tf_interpolate.cpp') + ' -o ' \
-           + os.path.join(SAMPLING_PATH, 'tf_interpolate_so.so') + ' -shared -fPIC ' \
-           + TF_CFLAGS + ' ' + CUDA_CFLAG + ' ' + TF_LFLAGS + ' ' + CUDA_LFLAG + '-O2'
+    return 'g++ -std=c++11 ' + os.path.join(INTERPOLATION_PATH, 'tf_interpolate.cpp') + ' -o ' \
+           + os.path.join(INTERPOLATION_PATH, 'tf_interpolate_so.so') + ' -shared -fPIC ' \
+           + TF_CFLAGS + ' ' + CUDA_CFLAG + ' ' + TF_LFLAGS + ' ' + CUDA_LFLAG + ' -O2'
 
 def cpp_grouping():
     return 'g++ -std=c++11 ' + os.path.join(GROUPING_PATH, 'tf_grouping.cpp') \
