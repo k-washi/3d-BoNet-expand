@@ -1,6 +1,10 @@
-import numpy as np
 import os
 import sys
+
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(BASE_DIR)
+
+import numpy as np
 import scipy.io
 import copy
 import matplotlib.pyplot as plt
@@ -14,8 +18,7 @@ from utils.logger import set_logger
 
 logger = set_logger(__name__)
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
-sys.path.append(BASE_DIR)
+
 
 
 class Plot(object):

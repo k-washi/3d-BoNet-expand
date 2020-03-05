@@ -1,14 +1,16 @@
 import os
 import sys
 
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(BASE_DIR)
+
 import configparser
 
 from utils.logger import set_logger
 
 logger = set_logger(__name__)
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
-sys.path.append(BASE_DIR)
+
 
 _config = configparser.ConfigParser()
 _config.sections()

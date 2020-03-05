@@ -1,18 +1,19 @@
 import os
 import sys
+
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(BASE_DIR)
+
 import shutil
 
 import tensorflow as tf
-
-
 
 
 from utils.logger import set_logger
 
 logger = set_logger(__name__)
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
-sys.path.append(BASE_DIR)
+
 
 
 class BoNet(object):

@@ -1,6 +1,9 @@
 import os
 import sys
 
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(BASE_DIR)
+
 import tensorflow as tf
 from model.helper_pointnet2 import sample_and_group_all
 
@@ -8,8 +11,7 @@ from utils.logger import set_logger
 
 logger = set_logger(__name__)
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
-sys.path.append(BASE_DIR)
+
 
 # Tensorflow boothing lib
 sys.path.append(os.path.join(BASE_DIR, 'tf_ops/sampling'))

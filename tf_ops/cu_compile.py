@@ -4,13 +4,15 @@ import sys
 import tensorflow as tf
 import subprocess
 
+
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(BASE_DIR)
+
 from utils.logger import set_logger
 import utils.config_ini as config
 
 logger = set_logger(__name__)
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
-sys.path.append(BASE_DIR)
 
 """
 Operation作成に伴うcuda, cppのコンパイル
