@@ -48,13 +48,13 @@ confirm_dir(SAMPLING_PATH)
 def nvcc_grouping():
     return NVCC_CMD + ' ' + os.path.join(GROUPING_PATH, 'tf_grouping_g.cu') + ' -o ' \
            + os.path.join(GROUPING_PATH, 'tf_grouping_g.cu.o') \
-           + '-c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC'
+           + ' -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC'
 
 
 def nvcc_sampling():
     return NVCC_CMD + ' ' + os.path.join(SAMPLING_PATH, 'tf_sampling_g.cu') + ' -o ' \
            + os.path.join(SAMPLING_PATH, 'tf_sampling_g.cu.o') \
-           + '-c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC'
+           + ' -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC'
 
 
 def cpp_sampling():
@@ -77,6 +77,7 @@ def cpp_grouping():
 
 def nvcc_proc_call():
     gr = nvcc_grouping()
+    print("!" + gr)
     try:
         res = subprocess.check_call(gr)
         logger.debug(res)
@@ -84,6 +85,7 @@ def nvcc_proc_call():
         logger.error(e)
 
     sm = nvcc_sampling()
+    print("!" + sm)
     try:
         res = subprocess.check_call(sm)
         logger.debug(res)
@@ -93,6 +95,7 @@ def nvcc_proc_call():
 
 def cpp_proc_call():
     gr = cpp_grouping()
+    print("!" + gr)
     try:
         res = subprocess.check_call(gr)
         logger.debug(res)
@@ -100,6 +103,7 @@ def cpp_proc_call():
         logger.error(e)
 
     sm = cpp_sampling()
+    print("!" + sm)
     try:
         res = subprocess.check_call(sm)
         logger.debug(res)
@@ -107,6 +111,7 @@ def cpp_proc_call():
         logger.error(e)
 
     inter = cpp_interpolation()
+    print("!" + inter)
     try:
         res = subprocess.check_call(inter)
         logger.debug(res)
