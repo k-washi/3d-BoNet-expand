@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e27c38c-d41f-469c-828e-b63ad1b57f4f" name="Default Changelist" comment="Modify to tf2">
-      <change beforePath="$PROJECT_DIR$/model/helper_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/helper_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/helper_pointnet2.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/helper_pointnet2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model_3d_BoNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/model_3d_BoNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model_pointnet2.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/model_pointnet2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf_ops/cu_compile.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf_ops/cu_compile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/config_ini.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/config_ini.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/helper_data_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/helper_data_plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/helper_data_s3dis.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/helper_data_s3dis.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/helper_net.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -79,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/config_ini.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="270">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -123,15 +116,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tf_ops/grouping/tf_grouping_compile.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="83" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -156,13 +140,13 @@
         <option value="$PROJECT_DIR$/tf_ops/interpolation/tf_interpolate.py" />
         <option value="$PROJECT_DIR$/config.ini" />
         <option value="$PROJECT_DIR$/tf_ops/cu_compile.py" />
-        <option value="$PROJECT_DIR$/utils/config_ini.py" />
         <option value="$PROJECT_DIR$/utils/helper_data_plot.py" />
         <option value="$PROJECT_DIR$/utils/helper_data_s3dis.py" />
         <option value="$PROJECT_DIR$/model/model_pointnet2.py" />
         <option value="$PROJECT_DIR$/model/model_3d_BoNet.py" />
         <option value="$PROJECT_DIR$/model/helper_pointnet2.py" />
         <option value="$PROJECT_DIR$/model/helper_net.py" />
+        <option value="$PROJECT_DIR$/utils/config_ini.py" />
       </list>
     </option>
   </component>
@@ -454,13 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="32" lean-forward="true" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tf_ops/interpolation/tf_interpolate_compile.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -486,16 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/config_ini.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -562,6 +529,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="32" lean-forward="true" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/config_ini.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

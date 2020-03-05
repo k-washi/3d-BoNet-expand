@@ -14,9 +14,9 @@ logger = set_logger(__name__)
 
 _config = configparser.ConfigParser()
 _config.sections()
-_config.read('../config.ini')
+_config.read(BASE_DIR + '/config.ini')
 
-
+print(_config)
 if 'ENV' in _config:
     CUDA_PATH = _config['ENV']['CUDA_PATH']
     if CUDA_PATH == "":
