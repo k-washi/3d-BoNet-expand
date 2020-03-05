@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
 sampling_module = tf.load_op_library(os.path.join(BASE_DIR, 'tf_sampling_so.so'))
 
-
+@tf.function
 def prob_sample(inp, inpr):
     '''
     input:
@@ -33,6 +33,7 @@ ops.NoGradient('ProbSample')
 #    shape1=op.inputs[0].get_shape().with_rank(2)
 #    shape2=op.inputs[1].get_shape().with_rank(2)
 #    return [tf.TensorShape([shape2.dims[0],shape2.dims[1]])]
+@tf.function
 def gather_point(inp, idx):
     '''
     input:
@@ -56,6 +57,7 @@ def _gather_point_grad(op, out_g):
     return [sampling_module.gather_point_grad(inp, idx, out_g), None]
 
 
+@tf.function
 def farthest_point_sample(npoint, inp):
     '''
     input:
@@ -79,14 +81,14 @@ if __name__ == '__main__':
         tria = inp[:, :, 0, :]
         trib = inp[:, :, 1, :]
         tric = inp[:, :, 2, :]
-        areas = tf.sqrt(tf.reduce_sum(tf.cross(trib - tria, tric - tria) ** 2, 2) + 1e-9)
-        randomnumbers = tf.random_uniform((1, 8192))
+        areas = tf.math.sqrt(tf.math.reduce_sum(tf.linalg.cross(trib - tria, tric - tria) ** 2, 2) + 1e-9)
+        randomnumbers = tf.random.uniform((1, 8192))
         triids = prob_sample(areas, randomnumbers)
         tria_sample = gather_point(tria, triids)
         trib_sample = gather_point(trib, triids)
         tric_sample = gather_point(tric, triids)
-        us = tf.random_uniform((1, 8192))
-        vs = tf.random_uniform((1, 8192))
+        us = tf.random.uniform((1, 8192))
+        vs = tf.random.uniform((1, 8192))
         uplusv = 1 - tf.abs(us + vs - 1)
         uminusv = us - vs
         us = (uplusv + uminusv) * 0.5
